@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Page</title>
+</head>
+<body>
+<h1>Admin Page</h1>
+
+<h2>Add new role to a user</h2>
+<ul>
+    <span th:text="${user}"></span>
+    <form id="addRoleForm" method="get">
+        <select name="userName">
+            <option th:each="user : ${users}" th:value="${user}" th:text="${user}"></option>
+        </select>
+        <input type="text" name="roleName" placeholder="Enter role name">
+        <button type="submit">Add Role</button>
+    </form>
+</ul>
+<script src="/js/admin.js" th:src="@{/js/admin.js}"></script>
+
+<a href = "/user-management/admin/students">Manage students</a>
+<br>
+<a href = "/user-management/admin/teachers">Manage teachers</a>
+<br>
+<a href = "/user-management/admin/courses">Manage courses</a>
+
+</body>
+</html>

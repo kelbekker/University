@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Management</title>
+</head>
+<body>
+<h1>Teacher Management</h1>
+
+<h2>All Teachers</h2>
+<a href = "/user-management/teachers/all-teachers">click here</a>
+
+<h2>Find Teacher by ID</h2>
+<form action="#" th:action="@{/user-management/admin/teachers/teacher-id}" th:object="${teacher}" method="post">
+    <label for="teacherId">Teacher ID:</label>
+    <input type="text" id="teacherId" name="id" required>
+    <button type="submit">Find</button>
+</form>
+
+<h2>Add Teacher</h2>
+<form action="#" th:action="@{/user-management/admin/teachers/add}" th:object="${teacher}" method="post">
+    <label for="addTeacherId">Teacher ID:</label>
+    <input type="text" id="addTeacherId" name="id" required>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+    <button type="submit">Add Teacher</button>
+</form>
+
+<h2>Update Teacher</h2>
+<form action="#" th:action="@{/user-management/admin/teachers/update}" th:object="${teacher}" method="post">
+    <label for="updateTeacherId">Teacher ID:</label>
+    <input type="text" id="updateTeacherId" name="id" required>
+    <label for="updatedFirstName">First Name:</label>
+    <input type="text" id="updatedFirstName" name="firstName" required>
+    <label for="updatedLastName">Last Name:</label>
+    <input type="text" id="updatedLastName" name="lastName" required>
+    <button type="submit">Update Teacher</button>
+</form>
+
+<h2>Delete Teacher by ID</h2>
+<form action="#" th:action="@{/user-management/admin/teachers/delete}" th:object="${teacher}" method="post">
+    <label for="deleteTeacherId">Student ID:</label>
+    <input type="text" id="deleteTeacherId" name="id" required>
+    <button type="submit">Delete Teacher</button>
+</form>
+</body>
+</html>

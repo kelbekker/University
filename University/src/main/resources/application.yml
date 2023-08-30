@@ -1,0 +1,27 @@
+spring:
+   datasource:
+      driverClassName: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/university
+      username: postgres
+      password: 1234
+
+      hikari:
+         maximumPoolSize: 10
+
+      jpa:
+         defer-datasource-initialization: true
+         sql:
+            init:
+               mode: always
+
+   flyway:
+      enabled: true
+      url: jdbc:postgresql://localhost:5432/university
+      password: 1234
+      user: postgres
+      schemas: public
+      locations: classpath:db/migration/postgresql
+
+
+   main:
+      allow-bean-definition-overriding: true

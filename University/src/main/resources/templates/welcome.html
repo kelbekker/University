@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome Page</title>
+</head>
+<body>
+<h1>Welcome To Our University!</h1>
+
+<h2>You Can See The List Of:</h2>
+<ul>
+    <li><a th:href="@{/user-management/courses/public-courses}">Public Information</a></li>
+    <li><a th:href="@{/user-management/students/all-students}">Students</a></li>
+    <li><a th:href="@{/user-management/teachers/all-teachers}">Teachers</a></li>
+    <li><a th:href="@{/user-management/courses/all-courses}">Courses</a></li>
+    <li><a th:href="@{/user-management/admin}">User Management</a></li>
+    <li><a th:href="@{/user-management/teachers/schedule}">Teacher schedule</a></li>
+    <li><a th:href="@{/user-management/students/schedule}">Student schedule</a></li>
+</ul>
+</body>
+</html>

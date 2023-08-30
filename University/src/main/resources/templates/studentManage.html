@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Management</title>
+</head>
+<body>
+<h1>Student Management</h1>
+
+<h2>All Students</h2>
+<a href = "/user-management/students/all-students">click here</a>
+
+<h2>Find Student by ID</h2>
+<form action="#" th:action="@{/user-management/admin/students/student-id}" th:object="${student}" method="post">
+    <label for="studentId">Student ID:</label>
+    <input type="text" id="studentId" name="id" required>
+    <button type="submit">Find</button>
+</form>
+
+<h2>Add Student</h2>
+<form action="#" th:action="@{/user-management/admin/students/add}" th:object="${student}" method="post">
+    <label for="addStudentId">Student ID:</label>
+    <input type="text" id="addStudentId" name="id" required>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required>
+    <button type="submit">Add Student</button>
+</form>
+
+<h2>Update Student</h2>
+<form action="#" th:action="@{/user-management/admin/students/update}" th:object="${student}" method="post">
+    <label for="updateUserId">Student ID:</label>
+    <input type="text" id="updateUserId" name="id" required>
+    <label for="updatedFirstName">First Name:</label>
+    <input type="text" id="updatedFirstName" name="firstName" required>
+    <label for="updatedLastName">Last Name:</label>
+    <input type="text" id="updatedLastName" name="lastName" required>
+    <button type="submit">Update Student</button>
+</form>
+
+<h2>Delete Student by ID</h2>
+<form id="deleteForm" th:action="@{/user-management/admin/students/delete}" th:object="${student}" method="post">
+    <label for="deleteStudentId">Student ID:</label>
+    <input type="text" id="deleteStudentId" name="id" required>
+    <button type="submit">Delete Student</button>
+</form>
+
+</body>
+</html>
